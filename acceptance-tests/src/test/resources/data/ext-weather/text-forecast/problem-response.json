@@ -1,0 +1,7 @@
+{
+    "forecast":null,
+    "problem":{
+        "type":"InvalidZipCodeException",
+        "description":"zip code must be numeric"
+    }
+}

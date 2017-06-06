@@ -1,0 +1,12 @@
+version: '2'
+services:
+
+  # log processor
+  logstash:
+    #build: logstash/
+    image: logstash
+    command: logstash -f /etc/logstash/conf.d/logstash.conf --debug
+    volumes:
+      - ./logstash:/etc/logstash/conf.d
+    ports:
+      - "5000:5000"

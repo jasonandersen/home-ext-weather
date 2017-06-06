@@ -1,0 +1,1 @@
+This template is just used to test the templating engine. ${REPLACE} <-- This should get replaced.

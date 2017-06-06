@@ -1,0 +1,31 @@
+# ext-weather acceptance tests
+# 
+# This will boot up an instance of the ext-weather service with an instance of mountebank
+# to provide service virtualization for any external dependencies.
+# 
+# Jason Andersen
+# 2016.08.25
+
+version: '2'
+services:
+
+  # The ext-weather service container
+  ext-weather:
+    image: ext-weather:latest
+    environment:
+      - wunderground.host.name=mountebank
+      - wunderground.host.port=7575
+      - wunderground.api.key=APIKEY
+    ports:
+      - "8080:8080"
+    logging:
+      driver: syslog
+      options:
+        tag: "acceptance-testing/{{.ImageName}}"
+    
+
+  # Service virtualization used to return test doubles for downstream dependency calls.
+  mountebank:
+    image: mountebank
+    ports:
+      - "2525:2525"

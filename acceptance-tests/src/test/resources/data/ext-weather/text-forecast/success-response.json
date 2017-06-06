@@ -1,0 +1,9 @@
+{
+  "forecast": {
+    "todaysForecast":"TODAYS_FORECAST",
+    "tomorrowsForecast":"TOMORROWS_FORECAST",
+    "source":"Wunderground.com",
+    "zipCode":"98070"
+  },
+  "problem":null
+} 
